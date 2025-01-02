@@ -10,6 +10,7 @@ title = "Sylvan's Abracadabra"
 author = "Sylvan"
 copyright = "Copyright © 2024, Sylvan Xingyu Y."
 languageCode = "en-US"
+enableGitInfo = true
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true

@@ -5,24 +5,12 @@
 title = "Sylvan's Abracadabra"
 +++
 
-# A match made in heaven
+# Who Am I
 
-There is a website obesity crisis. Bloated websites full of scripts, ads, and trackers are slowing your readers down every time they try to read your well-crafted content.
+_Blog in CN, the rest in EN._
 
-Hugo Bear Blog is all you need to build a fantastic and optimized site or blog. It works perfectly on **any** viewing device. All you need to focus on is writing good content.
+Hey there, my name is Sylvan. I work as a software engineer in an ecommerce company, at Beijing, China. I am building this website only for posting my daily thoughts and my study notes of interesting technologies.
 
-[Go to the original bear blog](https://bearblog.dev/).
+![eversong woods](images/profile-eversong-woods.jpg)
 
----
-
-What happens when you combine the worlds' fastest, most lightweight static site generator with a design theme built to provide you with free, no-nonsense, super-fast blogging capabilities?
-
-**Use this theme, and find out!**
-
-Made with 💟 by [Jan Raasch](https://www.janraasch.com).
-
----
-
-Simply publish content online, grow an audience, and keep your pages tiny, fast, and **optimized for search engines**.
-
-Each page is ~5kb, and you can **host your blog yourself**.
+One might ask why the heck do I call myself Sylvan. The reason sounds a little bit naive because the inspiration came from one of my favorite heroine, whose name is [Sylvanas](https://en.wikipedia.org/wiki/Sylvanas_Windrunner), in a video game called World of Warcraft. Originally, sylvan comes from a Latin word silva which means ‘a wood’. This is where I really admire the designers of this game in that the name Sylvanas perfectly embodies who the female elf is and where she is from. Sylvanas is a courageous elf ranger who once lived in a tranquil and spectacular forest called Eversong Woods and sacrificed her life there. I know the thought might sound crazy but I really wish I could live in such a place one day, despite that it is totally fabricated by game programmers.

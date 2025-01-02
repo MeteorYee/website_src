@@ -29,6 +29,8 @@
   </header>
   <main>
     {{- block "main" . }}{{- end }}
+    <br>
+    <i>-> Edited on {{ .Lastmod | time.Format ":date_medium" }}</i>
   </main>
   <footer>
     {{- partial "footer.html" . -}}
