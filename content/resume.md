@@ -3,24 +3,43 @@ title = "Résumé"
 menu = "main"
 +++
 
-# Hugo
+# Xingyu Yi
+- Email: xingyuyi34 at gmail dot com
+- Github: github.com/MeteorYee
+- Address: Beijing, China
 
-Website: https://gohugo.io
+## Education
+_University of Southern California_, Los Angeles, U.S., 2017 - 2019
+- M.S. Computer Science
 
-Written in Go, Hugo is an open-source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML, and JSON data file types, Markdown and HTML content files, and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification, and support for Sass SCSS workflows.
+_Beijing Jiao Tong University_, Beijing, China, 2013 - 2017
+- B.E. Computer Science and Technology
 
-Hugo makes use of a variety of open source projects including:
+## Experience
+### Alibaba
+_2023/10 - present_
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+Software engineer of Alibaba’s search engine
+- C++
+- Search Engine
+- Distributed System
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single-page applications, or even a website with thousands of pages.
+### Huawei, 2012 Lab
+_2020/04 - 2023/09_
 
-Hugo is for people who want to hand-code their own website without worrying about setting up complicated runtimes, dependencies, and databases.
+Software engineer of the storage engine of a cloud-native distributed database system
+_ C/C++
+_ Cutting-edge hardware: RDMA
+_ PostgreSQL based
 
-Websites built with Hugo are swift, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify, and any other hosting provider.
+### Personal Studies
+Been learning some interesting courses from those top-tier universities.
+- CMU 15445, github.com/MeteorYee/CMU 15445 2021Fall
+- MIT 6.824, github.com/MeteorYee/sixEight24
+- Stanford: [Language, Proof and Logic](https://www.edx.org/learn/logic/stanford-university-language-proof-and-logic)
+- HarvardX: [Introduction to Probability](https://www.edx.org/learn/probability/harvard-university-introduction-to-probability)
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+## Skills and Hobbies
+- Programing Languages: C/C++, Java, Python, Golang
+- Sports: Running, Swimming, Snowboarding
+- Reading: literary and best-selling books
