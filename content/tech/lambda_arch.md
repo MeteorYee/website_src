@@ -9,7 +9,7 @@ Unix pipeline is a simple but elegant way to make multiple processes conmunicate
 ## The Big OS for a Modern Company
 The companies nowadays are more or less digitalized. Therefore, there must be some operating system in a way running for their daily businesses. In other words, the tens of thousands of computers of a company, except for those don’t use computers at all, should work in an organized way in order to make profits, just like there are many processes running in a computer OS.
 
-TP -> ETLed -> AP
+A basic business pattern could be, at first, customers produces their transactional data by getting in touch with the company's products in any ways, such as browsing online, visiting a brick-and-mortar store and making a purchase etc.
 
 todo:
 
