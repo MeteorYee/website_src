@@ -2,9 +2,7 @@
 
 <br>
 <i>* Last updated on 
-{{ with .GitInfo }}
-    {{ .CommitDate.Format "2006-01-02" }}
-{{ end }}
+{{ now.Format "2006-01-02" }}
 </i>
 
 {{ .Content }}
