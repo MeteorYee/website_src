@@ -28,9 +28,9 @@ Software engineer of Alibaba’s search engine
 _2020/04 - 2023/09_
 
 Software engineer of the storage engine of a cloud-native distributed database system
-_ C/C++
-_ Cutting-edge hardware: RDMA
-_ PostgreSQL based
+- C/C++
+- Cutting-edge hardware: RDMA
+- PostgreSQL based
 
 ### Personal Studies
 Been learning some interesting courses from those top-tier universities.
