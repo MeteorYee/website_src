@@ -49,5 +49,6 @@ __Shibuya Sky__, Tokyo, Japan, 2024/10/02
 Seeing Tokyo Tower on Shibuya Sky. Guess who was sharing the stunning view with me at that moment? :)
 
 ![kyoto_tea](/images/gallery/kyoto_2025.jpeg)
+__Ippodo Tea__, Kyoto, Japan, 2025/10/02
 
 The best ever Matcha tea I tried in Kyoto, but next time, maybe not XD
