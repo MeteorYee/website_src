@@ -47,3 +47,7 @@ HK’s Symphony of Lights was on. However, it was not the show itself that made 
 __Shibuya Sky__, Tokyo, Japan, 2024/10/02
 
 Seeing Tokyo Tower on Shibuya Sky. Guess who was sharing the stunning view with me at that moment? :)
+
+![kyoto_tea](/images/gallery/kyoto_2025.jpeg)
+
+The best ever Matcha tea I tried in Kyoto, but next time, maybe not XD
