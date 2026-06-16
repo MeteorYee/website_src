@@ -1,0 +1,13 @@
+{{- $src := .Get "src" -}}
+{{- $title := .Get "title" -}}
+{{- $alt := .Get "alt" | default $title -}}
+{{- $meta := .Get "meta" -}}
+{{- $caption := trim .Inner "\n\r\t " -}}
+<figure class="gallery-item">
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  <figcaption>
+    {{ with $title }}<strong>{{ . }}</strong>{{ end }}
+    {{ with $meta }}<span>{{ . }}</span>{{ end }}
+    {{ with $caption }}<p>{{ . }}</p>{{ end }}
+  </figcaption>
+</figure>

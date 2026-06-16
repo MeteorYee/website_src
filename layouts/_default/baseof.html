@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html lang="{{ with .Site.Language.Locale }}{{ . }}{{ else }}en-US{{ end }}">
 
 <head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
@@ -24,15 +24,14 @@
 </head>
 
 <body>
-  <header>
+  <header class="site-header">
     {{- partial "header.html" . -}}
   </header>
   <main>
     {{- block "main" . }}{{- end }}
-    <br>
-    <i>-> Edited on {{ .Lastmod | time.Format ":date_medium" }}</i>
+    <p class="page-edited">Last edited {{ .Lastmod | time.Format ":date_medium" }}</p>
   </main>
-  <footer>
+  <footer class="site-footer">
     {{- partial "footer.html" . -}}
   </footer>
 

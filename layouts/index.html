@@ -1,9 +1,6 @@
 {{ define "main" }}
-
-<br>
-<i>* Last updated on 
-{{ now.Format "2006-01-02" }}
-</i>
-
-{{ .Content }}
+<p class="home-updated">Last updated {{ now.Format "2006-01-02" }}</p>
+<content class="content-body">
+  {{ .Content }}
+</content>
 {{ end }}

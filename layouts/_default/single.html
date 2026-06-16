@@ -1,21 +1,35 @@
 {{ define "main" }}
-{{ if not .Params.menu }}
-<h1>{{ .Title }}</h1>
-<p>
-  <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-    </time>
-  </i>
-</p>
-{{ end }}
-<content>
-  {{ .TableOfContents }}
-  {{ .Content }}
-</content>
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+<article class="page">
+  {{ if not .Params.hideTitle }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ $hasDate := not .Date.IsZero }}
+    {{ $tags := .GetTerms "tags" }}
+    {{ if or $hasDate $tags }}
+    <p class="page-meta">
+      {{ if $hasDate }}
+      <span>
+        Published
+        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </span>
+      {{ end }}
+      {{ with $tags }}
+      <span>
+        {{ range $index, $tag := . }}{{ if $index }} {{ end }}<a href="{{ $tag.RelPermalink }}">#{{ $tag.LinkTitle }}</a>{{ end }}
+      </span>
+      {{ end }}
+    </p>
+    {{ end }}
+  </header>
   {{ end }}
-</p>
+  <content class="content-body">
+    {{ $toc := .TableOfContents }}
+    {{ if findRE "<li>" $toc }}
+    {{ $toc }}
+    {{ end }}
+    {{ .Content }}
+  </content>
+</article>
 {{ end }}

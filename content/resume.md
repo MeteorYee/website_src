@@ -1,6 +1,7 @@
 +++
 title = "Résumé"
 menu = "main"
+hideTitle = true
 +++
 
 # Xingyu Yi

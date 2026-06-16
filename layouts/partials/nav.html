@@ -1,7 +1,9 @@
 <!-- <a href="{{ "" | relURL }}">Home</a> -->
 {{ range .Site.Menus.main }}
-<a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+{{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) (eq $.RelPermalink (.URL | relURL)) }}
+<a href="{{ .URL }}" class="nav-link{{ if $active }} is-active{{ end }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
 {{ end }}
 {{ with .Site.GetPage "/blog" }}
-<a href="{{ "blog" | relURL }}" class="nav-link">Blog</a>
+{{ $active := or (eq $.RelPermalink .RelPermalink) (eq $.Section "blog") }}
+<a href="{{ .RelPermalink }}" class="nav-link{{ if $active }} is-active{{ end }}"{{ if $active }} aria-current="page"{{ end }}>Blog</a>
 {{ end }}

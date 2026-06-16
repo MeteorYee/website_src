@@ -1,22 +1,31 @@
 {{ define "main" }}
-<content>
+<header class="list-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}
+  <div class="list-intro">{{ . }}</div>
+  {{ end }}
+</header>
+<content class="content-body">
   {{ if .Data.Singular }}
-  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
+  <h3>Filtering for "{{ .Title }}"</h3>
   <small>
     <a href="{{ "blog" | relURL }}">Remove filter</a>
   </small>
   {{ end }}
   <ul class="blog-posts">
-    {{ range .Pages }}
+    {{ range .Pages.ByDate.Reverse }}
     <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
+      <span class="archive-date">
+        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
       </span>
-      <a href="{{ .Permalink }}" class="list-item-link">{{ .Title }}</a>
+      <div class="archive-body">
+        <a href="{{ .RelPermalink }}" class="list-item-link">{{ .Title }}</a>
+        {{ with .Description }}
+        <p class="post-summary">{{ . }}</p>
+        {{ end }}
+      </div>
     </li>
     {{ else }}
     <li>
