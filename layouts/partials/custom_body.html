@@ -1,3 +1,88 @@
-  <!-- A partial to be overwritten by the user.
-  Simply place a custom_body.html into
-  your local /layouts/partials-directory -->
+{{- if or (.Store.Get "hasMermaid") (.Store.Get "hasImageZoom") }}
+<script type="module">
+  const createMediaDialog = () => {
+    const dialog = document.createElement("dialog");
+    dialog.className = "media-dialog";
+    dialog.innerHTML = `
+      <button class="media-dialog-close" type="button" aria-label="Close preview">x</button>
+      <div class="media-dialog-body"></div>
+    `;
+    document.body.appendChild(dialog);
+
+    const body = dialog.querySelector(".media-dialog-body");
+    const closeButton = dialog.querySelector(".media-dialog-close");
+
+    closeButton.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", () => {
+      body.innerHTML = "";
+    });
+
+    return {
+      body,
+      openHtml(html) {
+        body.innerHTML = html;
+        dialog.showModal();
+      },
+      openNode(node) {
+        body.innerHTML = "";
+        body.appendChild(node);
+        dialog.showModal();
+      },
+    };
+  };
+
+  const mediaDialog = createMediaDialog();
+
+  document.querySelectorAll(".gallery-image-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".gallery-item");
+      const image = button.querySelector("img");
+      if (!image) return;
+
+      const caption = item?.querySelector("figcaption")?.cloneNode(true);
+      const preview = document.createElement("figure");
+      preview.className = "media-dialog-figure";
+      const previewImage = document.createElement("img");
+      previewImage.src = image.currentSrc || image.src;
+      previewImage.alt = image.alt;
+      preview.appendChild(previewImage);
+      if (caption) preview.appendChild(caption);
+
+      mediaDialog.openNode(preview);
+    });
+  });
+
+  {{- if .Store.Get "hasMermaid" }}
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default",
+  });
+
+  await mermaid.run({
+    querySelector: ".mermaid",
+  });
+
+  const figures = document.querySelectorAll(".mermaid-figure");
+  const openFigure = (figure) => {
+    const renderedDiagram = figure.querySelector(".mermaid");
+    if (!renderedDiagram) return;
+    mediaDialog.openHtml(`<div class="media-dialog-mermaid">${renderedDiagram.innerHTML}</div>`);
+  };
+
+  figures.forEach((figure) => {
+    figure.addEventListener("click", () => openFigure(figure));
+    figure.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openFigure(figure);
+      }
+    });
+  });
+  {{- end }}
+</script>
+{{- end }}

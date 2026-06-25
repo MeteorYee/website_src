@@ -3,8 +3,11 @@
 {{- $alt := .Get "alt" | default $title -}}
 {{- $meta := .Get "meta" -}}
 {{- $caption := trim .Inner "\n\r\t " -}}
+{{- .Page.Store.Set "hasImageZoom" true -}}
 <figure class="gallery-item">
-  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  <button class="gallery-image-button" type="button" aria-label="{{ printf "Open image: %s" (default $alt $title) }}">
+    <img src="{{ $src | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  </button>
   <figcaption>
     {{ with $title }}<strong>{{ . }}</strong>{{ end }}
     {{ with $meta }}<span>{{ . }}</span>{{ end }}

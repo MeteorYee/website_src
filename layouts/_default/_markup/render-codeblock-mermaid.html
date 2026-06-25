@@ -1,0 +1,6 @@
+{{- .Page.Store.Set "hasMermaid" true -}}
+<figure class="mermaid-figure" role="button" tabindex="0" aria-label="Open diagram">
+  <div class="mermaid">
+  {{ .Inner | htmlEscape | safeHTML }}
+  </div>
+</figure>
