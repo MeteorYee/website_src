@@ -261,6 +261,25 @@
     margin-right: auto;
   }
 
+  .content-body p:has(> .content-image-button:only-child) {
+    margin: 0;
+  }
+
+  .content-image-button {
+    display: block;
+    width: 100%;
+    margin: 1.6rem 0 1rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+  }
+
+  .content-image-button img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   code {
     font-family:
       ui-monospace,
@@ -331,6 +350,27 @@
     color: var(--text);
   }
 
+  .media-dialog[data-media-type="image"] {
+    --viewer-top: max(44px, calc(env(safe-area-inset-top) + 14px));
+    --viewer-right: max(12px, env(safe-area-inset-right));
+    --viewer-bottom: max(12px, env(safe-area-inset-bottom));
+    --viewer-left: max(12px, env(safe-area-inset-left));
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding-top: var(--viewer-top);
+    padding-right: var(--viewer-right);
+    padding-bottom: var(--viewer-bottom);
+    padding-left: var(--viewer-left);
+    border: 0;
+    border-radius: 0;
+    background: rgba(15, 17, 16, 0.96);
+  }
+
   .media-dialog::backdrop {
     background: rgba(23, 27, 25, 0.55);
   }
@@ -349,9 +389,27 @@
     cursor: pointer;
   }
 
+  .media-dialog[data-media-type="image"] .media-dialog-close {
+    top: max(0.55rem, env(safe-area-inset-top));
+    right: max(0.55rem, env(safe-area-inset-right));
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+
   .media-dialog-body {
     overflow: auto;
     text-align: center;
+  }
+
+  .media-dialog[data-media-type="image"] .media-dialog-body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
   }
 
   .media-dialog-mermaid svg {
@@ -361,27 +419,17 @@
     height: auto;
   }
 
-  .media-dialog-figure {
-    margin: 0;
-  }
-
-  .media-dialog-figure img {
-    max-width: 100%;
-    max-height: calc(100vh - 9rem);
+  .media-dialog-image {
+    width: auto;
+    height: auto;
+    max-width: min(100%, 1120px);
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
     margin: 0 auto;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--surface);
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
     object-fit: contain;
-  }
-
-  .media-dialog-figure figcaption {
-    max-width: 760px;
-    margin: 0.85rem auto 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.55;
-    text-align: left;
   }
 
   div.highlight {

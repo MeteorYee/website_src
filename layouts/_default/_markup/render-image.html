@@ -1,0 +1,6 @@
+{{- $alt := .Text | plainify -}}
+{{- $label := default "image" $alt -}}
+{{- .Page.Store.Set "hasImageZoom" true -}}
+<button class="content-image-button" type="button" aria-label="{{ printf "Open image: %s" $label }}">
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+</button>

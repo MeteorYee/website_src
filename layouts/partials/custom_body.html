@@ -18,16 +18,19 @@
     });
     dialog.addEventListener("close", () => {
       body.innerHTML = "";
+      delete dialog.dataset.mediaType;
     });
 
     return {
       body,
       openHtml(html) {
         body.innerHTML = html;
+        dialog.dataset.mediaType = "default";
         dialog.showModal();
       },
-      openNode(node) {
+      openNode(node, mediaType = "default") {
         body.innerHTML = "";
+        dialog.dataset.mediaType = mediaType;
         body.appendChild(node);
         dialog.showModal();
       },
@@ -36,22 +39,17 @@
 
   const mediaDialog = createMediaDialog();
 
-  document.querySelectorAll(".gallery-image-button").forEach((button) => {
+  document.querySelectorAll(".gallery-image-button, .content-image-button").forEach((button) => {
     button.addEventListener("click", () => {
-      const item = button.closest(".gallery-item");
       const image = button.querySelector("img");
       if (!image) return;
 
-      const caption = item?.querySelector("figcaption")?.cloneNode(true);
-      const preview = document.createElement("figure");
-      preview.className = "media-dialog-figure";
       const previewImage = document.createElement("img");
+      previewImage.className = "media-dialog-image";
       previewImage.src = image.currentSrc || image.src;
       previewImage.alt = image.alt;
-      preview.appendChild(previewImage);
-      if (caption) preview.appendChild(caption);
 
-      mediaDialog.openNode(preview);
+      mediaDialog.openNode(previewImage, "image");
     });
   });
 
